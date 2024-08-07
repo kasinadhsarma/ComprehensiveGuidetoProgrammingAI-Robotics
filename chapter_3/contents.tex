@@ -1,0 +1,731 @@
+
+
+\hypertarget{chapter-3-data-structures-and-algorithms-dsa}{%
+\section{Chapter 3: Data Structures and Algorithms
+(DSA)}\label{chapter-3-data-structures-and-algorithms-dsa}}
+
+\hypertarget{introduction}{%
+\subsection{Introduction}\label{introduction}}
+
+Data Structures and Algorithms (DSA) form the backbone of computer
+science and software engineering. They are essential for writing
+efficient, scalable, and maintainable code. This chapter will cover
+fundamental and advanced data structures, algorithm design techniques,
+and their implementation in multiple programming languages.
+
+\hypertarget{fundamental-data-structures}{%
+\subsection{Fundamental Data
+Structures}\label{fundamental-data-structures}}
+
+\hypertarget{arrays}{%
+\subsubsection{1. Arrays}\label{arrays}}
+
+Arrays are the simplest and most widely used data structures. They store
+elements of the same type in contiguous memory locations.
+
+\hypertarget{implementation-in-python}{%
+\paragraph{Implementation in Python:}\label{implementation-in-python}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Creating an array}
+\NormalTok{arr }\OperatorTok{=}\NormalTok{ [}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{]}
+
+\CommentTok{\# Accessing elements}
+\BuiltInTok{print}\NormalTok{(arr[}\DecValTok{0}\NormalTok{])  }\CommentTok{\# Output: 1}
+
+\CommentTok{\# Modifying elements}
+\NormalTok{arr[}\DecValTok{2}\NormalTok{] }\OperatorTok{=} \DecValTok{10}
+\BuiltInTok{print}\NormalTok{(arr)  }\CommentTok{\# Output: [1, 2, 10, 4, 5]}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{time-complexity}{%
+\paragraph{Time Complexity:}\label{time-complexity}}
+
+\begin{itemize}
+\tightlist
+\item
+  Access: O(1)
+\item
+  Search: O(n)
+\item
+  Insertion: O(n)
+\item
+  Deletion: O(n)
+\end{itemize}
+
+\hypertarget{linked-lists}{%
+\subsubsection{2. Linked Lists}\label{linked-lists}}
+
+Linked lists consist of nodes, where each node contains data and a
+reference (or link) to the next node in the sequence.
+
+\hypertarget{implementation-in-c}{%
+\paragraph{Implementation in C:}\label{implementation-in-c}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{\#include }\ImportTok{\textless{}stdio.h\textgreater{}}
+\PreprocessorTok{\#include }\ImportTok{\textless{}stdlib.h\textgreater{}}
+
+\KeywordTok{struct}\NormalTok{ Node \{}
+    \DataTypeTok{int}\NormalTok{ data;}
+    \KeywordTok{struct}\NormalTok{ Node* next;}
+\NormalTok{\};}
+
+\KeywordTok{struct}\NormalTok{ Node* createNode(}\DataTypeTok{int}\NormalTok{ data) \{}
+    \KeywordTok{struct}\NormalTok{ Node* newNode = (}\KeywordTok{struct}\NormalTok{ Node*)malloc(}\KeywordTok{sizeof}\NormalTok{(}\KeywordTok{struct}\NormalTok{ Node));}
+\NormalTok{    newNode{-}\textgreater{}data = data;}
+\NormalTok{    newNode{-}\textgreater{}next = NULL;}
+    \ControlFlowTok{return}\NormalTok{ newNode;}
+\NormalTok{\}}
+
+\DataTypeTok{void}\NormalTok{ printList(}\KeywordTok{struct}\NormalTok{ Node* head) \{}
+    \KeywordTok{struct}\NormalTok{ Node* temp = head;}
+    \ControlFlowTok{while}\NormalTok{ (temp != NULL) \{}
+\NormalTok{        printf(}\StringTok{"\%d {-}\textgreater{} "}\NormalTok{, temp{-}\textgreater{}data);}
+\NormalTok{        temp = temp{-}\textgreater{}next;}
+\NormalTok{    \}}
+\NormalTok{    printf(}\StringTok{"NULL}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{);}
+\NormalTok{\}}
+
+\DataTypeTok{int}\NormalTok{ main() \{}
+    \KeywordTok{struct}\NormalTok{ Node* head = createNode(}\DecValTok{1}\NormalTok{);}
+\NormalTok{    head{-}\textgreater{}next = createNode(}\DecValTok{2}\NormalTok{);}
+\NormalTok{    head{-}\textgreater{}next{-}\textgreater{}next = createNode(}\DecValTok{3}\NormalTok{);}
+
+\NormalTok{    printList(head);}
+    \ControlFlowTok{return} \DecValTok{0}\NormalTok{;}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{time-complexity-1}{%
+\paragraph{Time Complexity:}\label{time-complexity-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Access: O(n)
+\item
+  Search: O(n)
+\item
+  Insertion: O(1) at the beginning, O(n) at the end
+\item
+  Deletion: O(1) at the beginning, O(n) at the end
+\end{itemize}
+
+\hypertarget{stacks}{%
+\subsubsection{3. Stacks}\label{stacks}}
+
+Stacks follow the Last-In-First-Out (LIFO) principle. Elements are added
+and removed from the same end, called the top.
+
+\hypertarget{implementation-in-java}{%
+\paragraph{Implementation in Java:}\label{implementation-in-java}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{import}\ImportTok{ java.util.Stack;}
+
+\KeywordTok{public} \KeywordTok{class}\NormalTok{ StackExample \{}
+    \KeywordTok{public} \DataTypeTok{static} \DataTypeTok{void} \FunctionTok{main}\NormalTok{(}\BuiltInTok{String}\NormalTok{[] args) \{}
+        \BuiltInTok{Stack}\NormalTok{\textless{}}\BuiltInTok{Integer}\NormalTok{\textgreater{} stack = }\KeywordTok{new} \BuiltInTok{Stack}\NormalTok{\textless{}\textgreater{}();}
+
+        \CommentTok{// Pushing elements}
+\NormalTok{        stack.}\FunctionTok{push}\NormalTok{(}\DecValTok{1}\NormalTok{);}
+\NormalTok{        stack.}\FunctionTok{push}\NormalTok{(}\DecValTok{2}\NormalTok{);}
+\NormalTok{        stack.}\FunctionTok{push}\NormalTok{(}\DecValTok{3}\NormalTok{);}
+
+        \CommentTok{// Popping elements}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(stack.}\FunctionTok{pop}\NormalTok{());  }\CommentTok{// Output: 3}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(stack.}\FunctionTok{pop}\NormalTok{());  }\CommentTok{// Output: 2}
+
+        \CommentTok{// Peeking at the top element}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(stack.}\FunctionTok{peek}\NormalTok{()); }\CommentTok{// Output: 1}
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{time-complexity-2}{%
+\paragraph{Time Complexity:}\label{time-complexity-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  Push: O(1)
+\item
+  Pop: O(1)
+\item
+  Peek: O(1)
+\end{itemize}
+
+\hypertarget{queues}{%
+\subsubsection{4. Queues}\label{queues}}
+
+Queues follow the First-In-First-Out (FIFO) principle. Elements are
+added at the rear and removed from the front.
+
+\hypertarget{implementation-in-javascript}{%
+\paragraph{Implementation in
+JavaScript:}\label{implementation-in-javascript}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Queue \{}
+    \FunctionTok{constructor}\NormalTok{() \{}
+        \KeywordTok{this}\OperatorTok{.}\AttributeTok{items} \OperatorTok{=}\NormalTok{ []}\OperatorTok{;}
+\NormalTok{    \}}
+
+    \FunctionTok{enqueue}\NormalTok{(element) \{}
+        \KeywordTok{this}\OperatorTok{.}\AttributeTok{items}\OperatorTok{.}\FunctionTok{push}\NormalTok{(element)}\OperatorTok{;}
+\NormalTok{    \}}
+
+    \FunctionTok{dequeue}\NormalTok{() \{}
+        \ControlFlowTok{if}\NormalTok{ (}\KeywordTok{this}\OperatorTok{.}\FunctionTok{isEmpty}\NormalTok{()) \{}
+            \ControlFlowTok{return} \StringTok{"Queue is empty"}\OperatorTok{;}
+\NormalTok{        \}}
+        \ControlFlowTok{return} \KeywordTok{this}\OperatorTok{.}\AttributeTok{items}\OperatorTok{.}\FunctionTok{shift}\NormalTok{()}\OperatorTok{;}
+\NormalTok{    \}}
+
+    \FunctionTok{front}\NormalTok{() \{}
+        \ControlFlowTok{if}\NormalTok{ (}\KeywordTok{this}\OperatorTok{.}\FunctionTok{isEmpty}\NormalTok{()) \{}
+            \ControlFlowTok{return} \StringTok{"Queue is empty"}\OperatorTok{;}
+\NormalTok{        \}}
+        \ControlFlowTok{return} \KeywordTok{this}\OperatorTok{.}\AttributeTok{items}\NormalTok{[}\DecValTok{0}\NormalTok{]}\OperatorTok{;}
+\NormalTok{    \}}
+
+    \FunctionTok{isEmpty}\NormalTok{() \{}
+        \ControlFlowTok{return} \KeywordTok{this}\OperatorTok{.}\AttributeTok{items}\OperatorTok{.}\AttributeTok{length} \OperatorTok{===} \DecValTok{0}\OperatorTok{;}
+\NormalTok{    \}}
+\NormalTok{\}}
+
+\CommentTok{// Usage}
+\KeywordTok{let}\NormalTok{ queue }\OperatorTok{=} \KeywordTok{new} \FunctionTok{Queue}\NormalTok{()}\OperatorTok{;}
+\NormalTok{queue}\OperatorTok{.}\FunctionTok{enqueue}\NormalTok{(}\DecValTok{1}\NormalTok{)}\OperatorTok{;}
+\NormalTok{queue}\OperatorTok{.}\FunctionTok{enqueue}\NormalTok{(}\DecValTok{2}\NormalTok{)}\OperatorTok{;}
+\NormalTok{queue}\OperatorTok{.}\FunctionTok{enqueue}\NormalTok{(}\DecValTok{3}\NormalTok{)}\OperatorTok{;}
+
+\BuiltInTok{console}\OperatorTok{.}\FunctionTok{log}\NormalTok{(queue}\OperatorTok{.}\FunctionTok{dequeue}\NormalTok{())}\OperatorTok{;}  \CommentTok{// Output: 1}
+\BuiltInTok{console}\OperatorTok{.}\FunctionTok{log}\NormalTok{(queue}\OperatorTok{.}\FunctionTok{front}\NormalTok{())}\OperatorTok{;}    \CommentTok{// Output: 2}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{time-complexity-3}{%
+\paragraph{Time Complexity:}\label{time-complexity-3}}
+
+\begin{itemize}
+\tightlist
+\item
+  Enqueue: O(1)
+\item
+  Dequeue: O(1)
+\item
+  Front: O(1)
+\end{itemize}
+
+\hypertarget{hash-tables}{%
+\subsubsection{5. Hash Tables}\label{hash-tables}}
+
+Hash tables provide fast insertion, deletion, and lookup operations by
+using a hash function to map keys to indices.
+
+\hypertarget{implementation-in-python-1}{%
+\paragraph{Implementation in Python:}\label{implementation-in-python-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ HashTable:}
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{, size):}
+        \VariableTok{self}\NormalTok{.size }\OperatorTok{=}\NormalTok{ size}
+        \VariableTok{self}\NormalTok{.table }\OperatorTok{=}\NormalTok{ [[] }\ControlFlowTok{for}\NormalTok{ \_ }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\VariableTok{self}\NormalTok{.size)]}
+
+    \KeywordTok{def}\NormalTok{ hash\_function(}\VariableTok{self}\NormalTok{, key):}
+        \ControlFlowTok{return} \BuiltInTok{hash}\NormalTok{(key) }\OperatorTok{\%} \VariableTok{self}\NormalTok{.size}
+
+    \KeywordTok{def}\NormalTok{ insert(}\VariableTok{self}\NormalTok{, key, value):}
+\NormalTok{        hash\_index }\OperatorTok{=} \VariableTok{self}\NormalTok{.hash\_function(key)}
+        \ControlFlowTok{for}\NormalTok{ item }\KeywordTok{in} \VariableTok{self}\NormalTok{.table[hash\_index]:}
+            \ControlFlowTok{if}\NormalTok{ item[}\DecValTok{0}\NormalTok{] }\OperatorTok{==}\NormalTok{ key:}
+\NormalTok{                item[}\DecValTok{1}\NormalTok{] }\OperatorTok{=}\NormalTok{ value}
+                \ControlFlowTok{return}
+        \VariableTok{self}\NormalTok{.table[hash\_index].append([key, value])}
+
+    \KeywordTok{def}\NormalTok{ get(}\VariableTok{self}\NormalTok{, key):}
+\NormalTok{        hash\_index }\OperatorTok{=} \VariableTok{self}\NormalTok{.hash\_function(key)}
+        \ControlFlowTok{for}\NormalTok{ item }\KeywordTok{in} \VariableTok{self}\NormalTok{.table[hash\_index]:}
+            \ControlFlowTok{if}\NormalTok{ item[}\DecValTok{0}\NormalTok{] }\OperatorTok{==}\NormalTok{ key:}
+                \ControlFlowTok{return}\NormalTok{ item[}\DecValTok{1}\NormalTok{]}
+        \ControlFlowTok{raise} \PreprocessorTok{KeyError}\NormalTok{(key)}
+
+\CommentTok{\# Usage}
+\NormalTok{ht }\OperatorTok{=}\NormalTok{ HashTable(}\DecValTok{10}\NormalTok{)}
+\NormalTok{ht.insert(}\StringTok{"apple"}\NormalTok{, }\DecValTok{5}\NormalTok{)}
+\NormalTok{ht.insert(}\StringTok{"banana"}\NormalTok{, }\DecValTok{7}\NormalTok{)}
+
+\BuiltInTok{print}\NormalTok{(ht.get(}\StringTok{"apple"}\NormalTok{))   }\CommentTok{\# Output: 5}
+\BuiltInTok{print}\NormalTok{(ht.get(}\StringTok{"banana"}\NormalTok{))  }\CommentTok{\# Output: 7}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{time-complexity-average-case}{%
+\paragraph{Time Complexity (average
+case):}\label{time-complexity-average-case}}
+
+\begin{itemize}
+\tightlist
+\item
+  Insertion: O(1)
+\item
+  Deletion: O(1)
+\item
+  Lookup: O(1)
+\end{itemize}
+
+\hypertarget{advanced-data-structures}{%
+\subsection{Advanced Data Structures}\label{advanced-data-structures}}
+
+\hypertarget{trees}{%
+\subsubsection{1. Trees}\label{trees}}
+
+Trees are hierarchical data structures consisting of nodes connected by
+edges. Common types include binary trees, binary search trees, and
+balanced trees (e.g., AVL trees, Red-Black trees).
+
+\hypertarget{binary-search-tree-implementation-in-c}{%
+\paragraph{Binary Search Tree Implementation in
+C++:}\label{binary-search-tree-implementation-in-c}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{\#include }\ImportTok{\textless{}iostream\textgreater{}}
+
+\KeywordTok{struct}\NormalTok{ Node \{}
+    \DataTypeTok{int}\NormalTok{ data;}
+\NormalTok{    Node* left;}
+\NormalTok{    Node* right;}
+
+\NormalTok{    Node(}\DataTypeTok{int}\NormalTok{ value) : data(value), left(}\KeywordTok{nullptr}\NormalTok{), right(}\KeywordTok{nullptr}\NormalTok{) \{\}}
+\NormalTok{\};}
+
+\KeywordTok{class}\NormalTok{ BinarySearchTree \{}
+\KeywordTok{private}\NormalTok{:}
+\NormalTok{    Node* root;}
+
+\NormalTok{    Node* insert(Node* node, }\DataTypeTok{int}\NormalTok{ value) \{}
+        \ControlFlowTok{if}\NormalTok{ (node == }\KeywordTok{nullptr}\NormalTok{) \{}
+            \ControlFlowTok{return} \KeywordTok{new}\NormalTok{ Node(value);}
+\NormalTok{        \}}
+
+        \ControlFlowTok{if}\NormalTok{ (value \textless{} node{-}\textgreater{}data) \{}
+\NormalTok{            node{-}\textgreater{}left = insert(node{-}\textgreater{}left, value);}
+\NormalTok{        \} }\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (value \textgreater{} node{-}\textgreater{}data) \{}
+\NormalTok{            node{-}\textgreater{}right = insert(node{-}\textgreater{}right, value);}
+\NormalTok{        \}}
+
+        \ControlFlowTok{return}\NormalTok{ node;}
+\NormalTok{    \}}
+
+    \DataTypeTok{void}\NormalTok{ inorder(Node* node) \{}
+        \ControlFlowTok{if}\NormalTok{ (node == }\KeywordTok{nullptr}\NormalTok{) }\ControlFlowTok{return}\NormalTok{;}
+
+\NormalTok{        inorder(node{-}\textgreater{}left);}
+        \BuiltInTok{std::}\NormalTok{cout \textless{}\textless{} node{-}\textgreater{}data \textless{}\textless{} }\StringTok{" "}\NormalTok{;}
+\NormalTok{        inorder(node{-}\textgreater{}right);}
+\NormalTok{    \}}
+
+\KeywordTok{public}\NormalTok{:}
+\NormalTok{    BinarySearchTree() : root(}\KeywordTok{nullptr}\NormalTok{) \{\}}
+
+    \DataTypeTok{void}\NormalTok{ insert(}\DataTypeTok{int}\NormalTok{ value) \{}
+\NormalTok{        root = insert(root, value);}
+\NormalTok{    \}}
+
+    \DataTypeTok{void}\NormalTok{ printInorder() \{}
+\NormalTok{        inorder(root);}
+        \BuiltInTok{std::}\NormalTok{cout \textless{}\textless{} }\BuiltInTok{std::}\NormalTok{endl;}
+\NormalTok{    \}}
+\NormalTok{\};}
+
+\DataTypeTok{int}\NormalTok{ main() \{}
+\NormalTok{    BinarySearchTree bst;}
+\NormalTok{    bst.insert(}\DecValTok{5}\NormalTok{);}
+\NormalTok{    bst.insert(}\DecValTok{3}\NormalTok{);}
+\NormalTok{    bst.insert(}\DecValTok{7}\NormalTok{);}
+\NormalTok{    bst.insert(}\DecValTok{1}\NormalTok{);}
+\NormalTok{    bst.insert(}\DecValTok{9}\NormalTok{);}
+
+\NormalTok{    bst.printInorder();  }\CommentTok{// Output: 1 3 5 7 9}
+    \ControlFlowTok{return} \DecValTok{0}\NormalTok{;}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{time-complexity-for-balanced-bst}{%
+\paragraph{Time Complexity (for balanced
+BST):}\label{time-complexity-for-balanced-bst}}
+
+\begin{itemize}
+\tightlist
+\item
+  Insertion: O(log n)
+\item
+  Deletion: O(log n)
+\item
+  Search: O(log n)
+\end{itemize}
+
+\hypertarget{graphs}{%
+\subsubsection{2. Graphs}\label{graphs}}
+
+Graphs consist of vertices (or nodes) connected by edges. They can be
+directed or undirected, weighted or unweighted.
+
+\hypertarget{graph-implementation-in-python}{%
+\paragraph{Graph Implementation in
+Python:}\label{graph-implementation-in-python}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Graph:}
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{):}
+        \VariableTok{self}\NormalTok{.graph }\OperatorTok{=}\NormalTok{ \{\}}
+
+    \KeywordTok{def}\NormalTok{ add\_edge(}\VariableTok{self}\NormalTok{, u, v):}
+        \ControlFlowTok{if}\NormalTok{ u }\KeywordTok{not} \KeywordTok{in} \VariableTok{self}\NormalTok{.graph:}
+            \VariableTok{self}\NormalTok{.graph[u] }\OperatorTok{=}\NormalTok{ []}
+        \VariableTok{self}\NormalTok{.graph[u].append(v)}
+
+    \KeywordTok{def}\NormalTok{ bfs(}\VariableTok{self}\NormalTok{, start):}
+\NormalTok{        visited }\OperatorTok{=} \BuiltInTok{set}\NormalTok{()}
+\NormalTok{        queue }\OperatorTok{=}\NormalTok{ [start]}
+\NormalTok{        visited.add(start)}
+
+        \ControlFlowTok{while}\NormalTok{ queue:}
+\NormalTok{            vertex }\OperatorTok{=}\NormalTok{ queue.pop(}\DecValTok{0}\NormalTok{)}
+            \BuiltInTok{print}\NormalTok{(vertex, end}\OperatorTok{=}\StringTok{" "}\NormalTok{)}
+
+            \ControlFlowTok{for}\NormalTok{ neighbor }\KeywordTok{in} \VariableTok{self}\NormalTok{.graph.get(vertex, []):}
+                \ControlFlowTok{if}\NormalTok{ neighbor }\KeywordTok{not} \KeywordTok{in}\NormalTok{ visited:}
+\NormalTok{                    visited.add(neighbor)}
+\NormalTok{                    queue.append(neighbor)}
+
+\CommentTok{\# Usage}
+\NormalTok{g }\OperatorTok{=}\NormalTok{ Graph()}
+\NormalTok{g.add\_edge(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+\NormalTok{g.add\_edge(}\DecValTok{0}\NormalTok{, }\DecValTok{2}\NormalTok{)}
+\NormalTok{g.add\_edge(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{)}
+\NormalTok{g.add\_edge(}\DecValTok{2}\NormalTok{, }\DecValTok{0}\NormalTok{)}
+\NormalTok{g.add\_edge(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+\NormalTok{g.add\_edge(}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+
+\BuiltInTok{print}\NormalTok{(}\StringTok{"BFS starting from vertex 2:"}\NormalTok{)}
+\NormalTok{g.bfs(}\DecValTok{2}\NormalTok{)  }\CommentTok{\# Output: 2 0 3 1}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{time-complexity-4}{%
+\paragraph{Time Complexity:}\label{time-complexity-4}}
+
+\begin{itemize}
+\tightlist
+\item
+  BFS: O(V + E), where V is the number of vertices and E is the number
+  of edges
+\end{itemize}
+
+\hypertarget{heaps}{%
+\subsubsection{3. Heaps}\label{heaps}}
+
+Heaps are specialized tree-based data structures that satisfy the heap
+property. They are commonly used to implement priority queues.
+
+\hypertarget{max-heap-implementation-in-java}{%
+\paragraph{Max Heap Implementation in
+Java:}\label{max-heap-implementation-in-java}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{import}\ImportTok{ java.util.ArrayList;}
+
+\KeywordTok{public} \KeywordTok{class}\NormalTok{ MaxHeap \{}
+    \KeywordTok{private} \BuiltInTok{ArrayList}\NormalTok{\textless{}}\BuiltInTok{Integer}\NormalTok{\textgreater{} heap;}
+
+    \KeywordTok{public} \FunctionTok{MaxHeap}\NormalTok{() \{}
+\NormalTok{        heap = }\KeywordTok{new} \BuiltInTok{ArrayList}\NormalTok{\textless{}\textgreater{}();}
+\NormalTok{    \}}
+
+    \KeywordTok{private} \DataTypeTok{int} \FunctionTok{parent}\NormalTok{(}\DataTypeTok{int}\NormalTok{ i) \{}
+        \KeywordTok{return}\NormalTok{ (i {-} }\DecValTok{1}\NormalTok{) / }\DecValTok{2}\NormalTok{;}
+\NormalTok{    \}}
+
+    \KeywordTok{private} \DataTypeTok{int} \FunctionTok{leftChild}\NormalTok{(}\DataTypeTok{int}\NormalTok{ i) \{}
+        \KeywordTok{return} \DecValTok{2}\NormalTok{ * i + }\DecValTok{1}\NormalTok{;}
+\NormalTok{    \}}
+
+    \KeywordTok{private} \DataTypeTok{int} \FunctionTok{rightChild}\NormalTok{(}\DataTypeTok{int}\NormalTok{ i) \{}
+        \KeywordTok{return} \DecValTok{2}\NormalTok{ * i + }\DecValTok{2}\NormalTok{;}
+\NormalTok{    \}}
+
+    \KeywordTok{private} \DataTypeTok{void} \FunctionTok{swap}\NormalTok{(}\DataTypeTok{int}\NormalTok{ i, }\DataTypeTok{int}\NormalTok{ j) \{}
+        \DataTypeTok{int}\NormalTok{ temp = heap.}\FunctionTok{get}\NormalTok{(i);}
+\NormalTok{        heap.}\FunctionTok{set}\NormalTok{(i, heap.}\FunctionTok{get}\NormalTok{(j));}
+\NormalTok{        heap.}\FunctionTok{set}\NormalTok{(j, temp);}
+\NormalTok{    \}}
+
+    \KeywordTok{public} \DataTypeTok{void} \FunctionTok{insert}\NormalTok{(}\DataTypeTok{int}\NormalTok{ key) \{}
+\NormalTok{        heap.}\FunctionTok{add}\NormalTok{(key);}
+        \DataTypeTok{int}\NormalTok{ i = heap.}\FunctionTok{size}\NormalTok{() {-} }\DecValTok{1}\NormalTok{;}
+        \KeywordTok{while}\NormalTok{ (i \textgreater{} }\DecValTok{0}\NormalTok{ \&\& heap.}\FunctionTok{get}\NormalTok{(}\FunctionTok{parent}\NormalTok{(i)) \textless{} heap.}\FunctionTok{get}\NormalTok{(i)) \{}
+            \FunctionTok{swap}\NormalTok{(i, }\FunctionTok{parent}\NormalTok{(i));}
+\NormalTok{            i = }\FunctionTok{parent}\NormalTok{(i);}
+\NormalTok{        \}}
+\NormalTok{    \}}
+
+    \KeywordTok{public} \DataTypeTok{int} \FunctionTok{extractMax}\NormalTok{() \{}
+        \KeywordTok{if}\NormalTok{ (heap.}\FunctionTok{isEmpty}\NormalTok{()) \{}
+            \KeywordTok{throw} \KeywordTok{new} \BuiltInTok{IllegalStateException}\NormalTok{(}\StringTok{"Heap is empty"}\NormalTok{);}
+\NormalTok{        \}}
+
+        \DataTypeTok{int}\NormalTok{ max = heap.}\FunctionTok{get}\NormalTok{(}\DecValTok{0}\NormalTok{);}
+        \DataTypeTok{int}\NormalTok{ lastElement = heap.}\FunctionTok{remove}\NormalTok{(heap.}\FunctionTok{size}\NormalTok{() {-} }\DecValTok{1}\NormalTok{);}
+
+        \KeywordTok{if}\NormalTok{ (!heap.}\FunctionTok{isEmpty}\NormalTok{()) \{}
+\NormalTok{            heap.}\FunctionTok{set}\NormalTok{(}\DecValTok{0}\NormalTok{, lastElement);}
+            \FunctionTok{heapify}\NormalTok{(}\DecValTok{0}\NormalTok{);}
+\NormalTok{        \}}
+
+        \KeywordTok{return}\NormalTok{ max;}
+\NormalTok{    \}}
+
+    \KeywordTok{private} \DataTypeTok{void} \FunctionTok{heapify}\NormalTok{(}\DataTypeTok{int}\NormalTok{ i) \{}
+        \DataTypeTok{int}\NormalTok{ largest = i;}
+        \DataTypeTok{int}\NormalTok{ left = }\FunctionTok{leftChild}\NormalTok{(i);}
+        \DataTypeTok{int}\NormalTok{ right = }\FunctionTok{rightChild}\NormalTok{(i);}
+
+        \KeywordTok{if}\NormalTok{ (left \textless{} heap.}\FunctionTok{size}\NormalTok{() \&\& heap.}\FunctionTok{get}\NormalTok{(left) \textgreater{} heap.}\FunctionTok{get}\NormalTok{(largest)) \{}
+\NormalTok{            largest = left;}
+\NormalTok{        \}}
+
+        \KeywordTok{if}\NormalTok{ (right \textless{} heap.}\FunctionTok{size}\NormalTok{() \&\& heap.}\FunctionTok{get}\NormalTok{(right) \textgreater{} heap.}\FunctionTok{get}\NormalTok{(largest)) \{}
+\NormalTok{            largest = right;}
+\NormalTok{        \}}
+
+        \KeywordTok{if}\NormalTok{ (largest != i) \{}
+            \FunctionTok{swap}\NormalTok{(i, largest);}
+            \FunctionTok{heapify}\NormalTok{(largest);}
+\NormalTok{        \}}
+\NormalTok{    \}}
+
+    \KeywordTok{public} \DataTypeTok{static} \DataTypeTok{void} \FunctionTok{main}\NormalTok{(}\BuiltInTok{String}\NormalTok{[] args) \{}
+\NormalTok{        MaxHeap maxHeap = }\KeywordTok{new} \FunctionTok{MaxHeap}\NormalTok{();}
+\NormalTok{        maxHeap.}\FunctionTok{insert}\NormalTok{(}\DecValTok{3}\NormalTok{);}
+\NormalTok{        maxHeap.}\FunctionTok{insert}\NormalTok{(}\DecValTok{1}\NormalTok{);}
+\NormalTok{        maxHeap.}\FunctionTok{insert}\NormalTok{(}\DecValTok{4}\NormalTok{);}
+\NormalTok{        maxHeap.}\FunctionTok{insert}\NormalTok{(}\DecValTok{1}\NormalTok{);}
+\NormalTok{        maxHeap.}\FunctionTok{insert}\NormalTok{(}\DecValTok{5}\NormalTok{);}
+
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(maxHeap.}\FunctionTok{extractMax}\NormalTok{());  }\CommentTok{// Output: 5}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(maxHeap.}\FunctionTok{extractMax}\NormalTok{());  }\CommentTok{// Output: 4}
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{time-complexity-5}{%
+\paragraph{Time Complexity:}\label{time-complexity-5}}
+
+\begin{itemize}
+\tightlist
+\item
+  Insertion: O(log n)
+\item
+  Extract Max/Min: O(log n)
+\end{itemize}
+
+\hypertarget{algorithm-design-techniques}{%
+\subsection{Algorithm Design
+Techniques}\label{algorithm-design-techniques}}
+
+\hypertarget{divide-and-conquer}{%
+\subsubsection{1. Divide and Conquer}\label{divide-and-conquer}}
+
+Divide and Conquer is an algorithm design paradigm that works by
+recursively breaking down a problem into smaller subproblems until these
+become simple enough to be solved directly.
+
+\hypertarget{example-merge-sort}{%
+\paragraph{Example: Merge Sort}\label{example-merge-sort}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ merge\_sort(arr):}
+    \ControlFlowTok{if} \BuiltInTok{len}\NormalTok{(arr) }\OperatorTok{\textless{}=} \DecValTok{1}\NormalTok{:}
+        \ControlFlowTok{return}\NormalTok{ arr}
+
+\NormalTok{    mid }\OperatorTok{=} \BuiltInTok{len}\NormalTok{(arr) }\OperatorTok{//} \DecValTok{2}
+\NormalTok{    left }\OperatorTok{=}\NormalTok{ merge\_sort(arr[:mid])}
+\NormalTok{    right }\OperatorTok{=}\NormalTok{ merge\_sort(arr[mid:])}
+
+    \ControlFlowTok{return}\NormalTok{ merge(left, right)}
+
+\KeywordTok{def}\NormalTok{ merge(left, right):}
+\NormalTok{    result }\OperatorTok{=}\NormalTok{ []}
+\NormalTok{    i, j }\OperatorTok{=} \DecValTok{0}\NormalTok{, }\DecValTok{0}
+
+    \ControlFlowTok{while}\NormalTok{ i }\OperatorTok{\textless{}} \BuiltInTok{len}\NormalTok{(left) }\KeywordTok{and}\NormalTok{ j }\OperatorTok{\textless{}} \BuiltInTok{len}\NormalTok{(right):}
+        \ControlFlowTok{if}\NormalTok{ left[i] }\OperatorTok{\textless{}=}\NormalTok{ right[j]:}
+\NormalTok{            result.append(left[i])}
+\NormalTok{            i }\OperatorTok{+=} \DecValTok{1}
+        \ControlFlowTok{else}\NormalTok{:}
+\NormalTok{            result.append(right[j])}
+\NormalTok{            j }\OperatorTok{+=} \DecValTok{1}
+
+\NormalTok{    result.extend(left[i:])}
+\NormalTok{    result.extend(right[j:])}
+    \ControlFlowTok{return}\NormalTok{ result}
+
+\CommentTok{\# Usage}
+\NormalTok{arr }\OperatorTok{=}\NormalTok{ [}\DecValTok{38}\NormalTok{, }\DecValTok{27}\NormalTok{, }\DecValTok{43}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{9}\NormalTok{, }\DecValTok{82}\NormalTok{, }\DecValTok{10}\NormalTok{]}
+\NormalTok{sorted\_arr }\OperatorTok{=}\NormalTok{ merge\_sort(arr)}
+\BuiltInTok{print}\NormalTok{(sorted\_arr)  }\CommentTok{\# Output: [3, 9, 10, 27, 38, 43, 82]}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{dynamic-programming}{%
+\subsubsection{2. Dynamic Programming}\label{dynamic-programming}}
+
+Dynamic Programming is a method for solving complex problems by breaking
+them down into simpler subproblems. It is applicable when subproblems
+overlap and have optimal substructure.
+
+\hypertarget{example-fibonacci-sequence}{%
+\paragraph{Example: Fibonacci
+Sequence}\label{example-fibonacci-sequence}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{public} \KeywordTok{class}\NormalTok{ Fibonacci \{}
+    \KeywordTok{public} \DataTypeTok{static} \DataTypeTok{int} \FunctionTok{fibonacci}\NormalTok{(}\DataTypeTok{int}\NormalTok{ n) \{}
+        \KeywordTok{if}\NormalTok{ (n \textless{}= }\DecValTok{1}\NormalTok{) \{}
+            \KeywordTok{return}\NormalTok{ n;}
+\NormalTok{        \}}
+
+        \DataTypeTok{int}\NormalTok{[] dp = }\KeywordTok{new} \DataTypeTok{int}\NormalTok{[n + }\DecValTok{1}\NormalTok{];}
+\NormalTok{        dp[}\DecValTok{0}\NormalTok{] = }\DecValTok{0}\NormalTok{;}
+\NormalTok{        dp[}\DecValTok{1}\NormalTok{] = }\DecValTok{1}\NormalTok{;}
+
+        \KeywordTok{for}\NormalTok{ (}\DataTypeTok{int}\NormalTok{ i = }\DecValTok{2}\NormalTok{; i \textless{}= n; i++) \{}
+\NormalTok{            dp[i] = dp[i {-} }\DecValTok{1}\NormalTok{] + dp[i {-} }\DecValTok{2}\NormalTok{];}
+\NormalTok{        \}}
+
+        \KeywordTok{return}\NormalTok{ dp[n];}
+\NormalTok{    \}}
+
+    \KeywordTok{public} \DataTypeTok{static} \DataTypeTok{void} \FunctionTok{main}\NormalTok{(}\BuiltInTok{String}\NormalTok{[] args) \{}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\FunctionTok{fibonacci}\NormalTok{(}\DecValTok{10}\NormalTok{));  }\CommentTok{// Output: 55}
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{greedy-algorithms}{%
+\subsubsection{3. Greedy Algorithms}\label{greedy-algorithms}}
+
+Greedy algorithms make locally optimal choices at each step with the
+hope of finding a global optimum.
+
+\hypertarget{example-coin-change-problem}{%
+\paragraph{Example: Coin Change
+Problem}\label{example-coin-change-problem}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{\#include }\ImportTok{\textless{}iostream\textgreater{}}
+\PreprocessorTok{\#include }\ImportTok{\textless{}vector\textgreater{}}
+\PreprocessorTok{\#include }\ImportTok{\textless{}algorithm\textgreater{}}
+
+\KeywordTok{using} \KeywordTok{namespace}\NormalTok{ std;}
+
+\NormalTok{vector\textless{}}\DataTypeTok{int}\NormalTok{\textgreater{} coinChange(vector\textless{}}\DataTypeTok{int}\NormalTok{\textgreater{}\& coins, }\DataTypeTok{int}\NormalTok{ amount) \{}
+\NormalTok{    sort(coins.rbegin(), coins.rend());}
+\NormalTok{    vector\textless{}}\DataTypeTok{int}\NormalTok{\textgreater{} result;}
+
+    \ControlFlowTok{for}\NormalTok{ (}\DataTypeTok{int}\NormalTok{ coin : coins) \{}
+        \ControlFlowTok{while}\NormalTok{ (amount \textgreater{}= coin) \{}
+\NormalTok{            result.push\_back(coin);}
+\NormalTok{            amount {-}= coin;}
+\NormalTok{        \}}
+\NormalTok{    \}}
+
+    \ControlFlowTok{if}\NormalTok{ (amount == }\DecValTok{0}\NormalTok{) \{}
+        \ControlFlowTok{return}\NormalTok{ result;}
+\NormalTok{    \} }\ControlFlowTok{else}\NormalTok{ \{}
+        \ControlFlowTok{return}\NormalTok{ vector\textless{}}\DataTypeTok{int}\NormalTok{\textgreater{}();  }\CommentTok{// No solution}
+\NormalTok{    \}}
+\NormalTok{\}}
+
+\DataTypeTok{int}\NormalTok{ main() \{}
+\NormalTok{    vector\textless{}}\DataTypeTok{int}\NormalTok{\textgreater{} coins = \{}\DecValTok{25}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{1}\NormalTok{\};}
+    \DataTypeTok{int}\NormalTok{ amount = }\DecValTok{67}\NormalTok{;}
+
+\NormalTok{    vector\textless{}}\DataTypeTok{int}\NormalTok{\textgreater{} change = coinChange(coins, amount);}
+
+    \ControlFlowTok{if}\NormalTok{ (!change.empty()) \{}
+\NormalTok{        cout \textless{}\textless{} }\StringTok{"Coins used: "}\NormalTok{;}
+        \ControlFlowTok{for}\NormalTok{ (}\DataTypeTok{int}\NormalTok{ coin : change) \{}
+\NormalTok{            cout \textless{}\textless{} coin \textless{}\textless{} }\StringTok{" "}\NormalTok{;}
+\NormalTok{        \}}
+\NormalTok{        cout \textless{}\textless{} endl;}
+\NormalTok{    \} }\ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{        cout \textless{}\textless{} }\StringTok{"No solution found."}\NormalTok{ \textless{}\textless{} endl;}
+\NormalTok{    \}}
+
+    \ControlFlowTok{return} \DecValTok{0}\NormalTok{;}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{time-and-space-complexity-analysis}{%
+\subsection{Time and Space Complexity
+Analysis}\label{time-and-space-complexity-analysis}}
+
+Understanding time and space complexity is crucial for analyzing and
+optimizing algorithms. We use Big O notation to describe the upper bound
+of an algorithm's growth rate.
+
+Common time complexities: - O(1): Constant time - O(log n): Logarithmic
+time - O(n): Linear time - O(n log n): Linearithmic time - O(n\^{}2):
+Quadratic time - O(2\^{}n): Exponential time
+
+Space complexity refers to the amount of memory an algorithm uses
+relative to the input size.
+
+Example analysis:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ linear\_search(arr, target):}
+    \ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\BuiltInTok{len}\NormalTok{(arr)):}
+        \ControlFlowTok{if}\NormalTok{ arr[i] }\OperatorTok{==}\NormalTok{ target:}
+            \ControlFlowTok{return}\NormalTok{ i}
+    \ControlFlowTok{return} \OperatorTok{{-}}\DecValTok{1}
+
+\CommentTok{\# Time complexity: O(n) {-} we may need to search through all elements}
+\CommentTok{\# Space complexity: O(1) {-} we only use a constant amount of extra space}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{conclusion}{%
+\subsection{Conclusion}\label{conclusion}}
+
+This chapter has covered fundamental and advanced data structures, along
+with key algorithm design techniques. Understanding these concepts is
+crucial for writing efficient and scalable code. As you progress through
+your programming journey, continue to practice implementing these data
+structures and algorithms in various languages to solidify your
+understanding and improve your problem-solving skills.
+
+\end{document}

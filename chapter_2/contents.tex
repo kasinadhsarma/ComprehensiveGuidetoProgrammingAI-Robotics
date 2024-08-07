@@ -1,0 +1,697 @@
+
+
+\hypertarget{chapter-2-introduction-to-python-c-javascript-and-java-from-basics-to-in-depth}{%
+\section{Chapter 2: Introduction to Python, C, JavaScript, and Java:
+From Basics to
+In-Depth}\label{chapter-2-introduction-to-python-c-javascript-and-java-from-basics-to-in-depth}}
+
+\hypertarget{overview-of-programming-paradigms}{%
+\subsection{Overview of Programming
+Paradigms}\label{overview-of-programming-paradigms}}
+
+Before diving into specific programming languages, it's essential to
+understand the fundamental programming paradigms that shape how we
+approach problem-solving in software development. The main paradigms
+we'll encounter in this chapter are:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Imperative Programming
+\item
+  Object-Oriented Programming (OOP)
+\item
+  Functional Programming
+\item
+  Procedural Programming
+\end{enumerate}
+
+Each paradigm has its strengths and is suited for different types of
+problems. The languages we'll explore in this chapter - Python, C,
+JavaScript, and Java - support one or more of these paradigms.
+
+\hypertarget{python}{%
+\subsection{Python}\label{python}}
+
+Python is a versatile, high-level programming language known for its
+readability and simplicity. It supports multiple programming paradigms,
+including object-oriented, imperative, and functional programming.
+
+\hypertarget{syntax-and-basic-structure}{%
+\subsubsection{Syntax and Basic
+Structure}\label{syntax-and-basic-structure}}
+
+Python uses indentation to define code blocks, making it visually clean
+and easy to read.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# This is a comment}
+\KeywordTok{def}\NormalTok{ greet(name):}
+    \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"Hello, }\SpecialCharTok{\{}\NormalTok{name}\SpecialCharTok{\}}\SpecialStringTok{!"}\NormalTok{)}
+
+\NormalTok{greet(}\StringTok{"World"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{data-types}{%
+\subsubsection{Data Types}\label{data-types}}
+
+Python has several built-in data types:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Numeric Types: \texttt{int}, \texttt{float}, \texttt{complex}
+\item
+  Sequence Types: \texttt{list}, \texttt{tuple}, \texttt{range}
+\item
+  Text Type: \texttt{str}
+\item
+  Mapping Type: \texttt{dict}
+\item
+  Set Types: \texttt{set}, \texttt{frozenset}
+\item
+  Boolean Type: \texttt{bool}
+\end{enumerate}
+
+Example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Numeric types}
+\NormalTok{x }\OperatorTok{=} \DecValTok{5}       \CommentTok{\# int}
+\NormalTok{y }\OperatorTok{=} \FloatTok{3.14}    \CommentTok{\# float}
+
+\CommentTok{\# Sequence types}
+\NormalTok{my\_list }\OperatorTok{=}\NormalTok{ [}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{]}
+\NormalTok{my\_tuple }\OperatorTok{=}\NormalTok{ (}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{)}
+
+\CommentTok{\# String}
+\NormalTok{message }\OperatorTok{=} \StringTok{"Hello, Python!"}
+
+\CommentTok{\# Dictionary}
+\NormalTok{person }\OperatorTok{=}\NormalTok{ \{}\StringTok{"name"}\NormalTok{: }\StringTok{"Alice"}\NormalTok{, }\StringTok{"age"}\NormalTok{: }\DecValTok{30}\NormalTok{\}}
+
+\CommentTok{\# Set}
+\NormalTok{unique\_numbers }\OperatorTok{=}\NormalTok{ \{}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{\}}
+
+\CommentTok{\# Boolean}
+\NormalTok{is\_python\_fun }\OperatorTok{=} \VariableTok{True}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{control-structures}{%
+\subsubsection{Control Structures}\label{control-structures}}
+
+Python supports standard control structures like if-else statements,
+loops, and exception handling.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# If{-}else statement}
+\NormalTok{x }\OperatorTok{=} \DecValTok{10}
+\ControlFlowTok{if}\NormalTok{ x }\OperatorTok{\textgreater{}} \DecValTok{5}\NormalTok{:}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"x is greater than 5"}\NormalTok{)}
+\ControlFlowTok{else}\NormalTok{:}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"x is not greater than 5"}\NormalTok{)}
+
+\CommentTok{\# For loop}
+\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{5}\NormalTok{):}
+    \BuiltInTok{print}\NormalTok{(i)}
+
+\CommentTok{\# While loop}
+\NormalTok{count }\OperatorTok{=} \DecValTok{0}
+\ControlFlowTok{while}\NormalTok{ count }\OperatorTok{\textless{}} \DecValTok{5}\NormalTok{:}
+    \BuiltInTok{print}\NormalTok{(count)}
+\NormalTok{    count }\OperatorTok{+=} \DecValTok{1}
+
+\CommentTok{\# Exception handling}
+\ControlFlowTok{try}\NormalTok{:}
+\NormalTok{    result }\OperatorTok{=} \DecValTok{10} \OperatorTok{/} \DecValTok{0}
+\ControlFlowTok{except} \PreprocessorTok{ZeroDivisionError}\NormalTok{:}
+    \BuiltInTok{print}\NormalTok{(}\StringTok{"Cannot divide by zero!"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{functions}{%
+\subsubsection{Functions}\label{functions}}
+
+Functions in Python are defined using the \texttt{def} keyword:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ factorial(n):}
+    \ControlFlowTok{if}\NormalTok{ n }\OperatorTok{==} \DecValTok{0} \KeywordTok{or}\NormalTok{ n }\OperatorTok{==} \DecValTok{1}\NormalTok{:}
+        \ControlFlowTok{return} \DecValTok{1}
+    \ControlFlowTok{else}\NormalTok{:}
+        \ControlFlowTok{return}\NormalTok{ n }\OperatorTok{*}\NormalTok{ factorial(n }\OperatorTok{{-}} \DecValTok{1}\NormalTok{)}
+
+\BuiltInTok{print}\NormalTok{(factorial(}\DecValTok{5}\NormalTok{))  }\CommentTok{\# Output: 120}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{object-oriented-programming}{%
+\subsubsection{Object-Oriented
+Programming}\label{object-oriented-programming}}
+
+Python supports OOP principles such as encapsulation, inheritance, and
+polymorphism:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Animal:}
+    \KeywordTok{def} \FunctionTok{\_\_init\_\_}\NormalTok{(}\VariableTok{self}\NormalTok{, name):}
+        \VariableTok{self}\NormalTok{.name }\OperatorTok{=}\NormalTok{ name}
+
+    \KeywordTok{def}\NormalTok{ speak(}\VariableTok{self}\NormalTok{):}
+        \ControlFlowTok{pass}
+
+\KeywordTok{class}\NormalTok{ Dog(Animal):}
+    \KeywordTok{def}\NormalTok{ speak(}\VariableTok{self}\NormalTok{):}
+        \ControlFlowTok{return} \SpecialStringTok{f"}\SpecialCharTok{\{}\VariableTok{self}\SpecialCharTok{.}\NormalTok{name}\SpecialCharTok{\}}\SpecialStringTok{ says Woof!"}
+
+\KeywordTok{class}\NormalTok{ Cat(Animal):}
+    \KeywordTok{def}\NormalTok{ speak(}\VariableTok{self}\NormalTok{):}
+        \ControlFlowTok{return} \SpecialStringTok{f"}\SpecialCharTok{\{}\VariableTok{self}\SpecialCharTok{.}\NormalTok{name}\SpecialCharTok{\}}\SpecialStringTok{ says Meow!"}
+
+\NormalTok{dog }\OperatorTok{=}\NormalTok{ Dog(}\StringTok{"Buddy"}\NormalTok{)}
+\NormalTok{cat }\OperatorTok{=}\NormalTok{ Cat(}\StringTok{"Whiskers"}\NormalTok{)}
+
+\BuiltInTok{print}\NormalTok{(dog.speak())  }\CommentTok{\# Output: Buddy says Woof!}
+\BuiltInTok{print}\NormalTok{(cat.speak())  }\CommentTok{\# Output: Whiskers says Meow!}
+\end{Highlighting}
+\end{Shaded}
+
+Python's simplicity and extensive standard library make it an excellent
+choice for beginners and experienced programmers alike. Its applications
+range from web development and data analysis to artificial intelligence
+and scientific computing.
+
+\hypertarget{c}{%
+\subsection{C}\label{c}}
+
+C is a powerful, low-level programming language that provides
+fine-grained control over hardware resources. It follows the procedural
+programming paradigm and is known for its efficiency and portability.
+
+\hypertarget{syntax-and-basic-structure-1}{%
+\subsubsection{Syntax and Basic
+Structure}\label{syntax-and-basic-structure-1}}
+
+C programs typically consist of functions, with the \texttt{main()}
+function serving as the entry point:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{\#include }\ImportTok{\textless{}stdio.h\textgreater{}}
+
+\DataTypeTok{int}\NormalTok{ main() \{}
+\NormalTok{    printf(}\StringTok{"Hello, World!}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{);}
+    \ControlFlowTok{return} \DecValTok{0}\NormalTok{;}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{data-types-1}{%
+\subsubsection{Data Types}\label{data-types-1}}
+
+C provides several basic data types:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Integer types: \texttt{int}, \texttt{short}, \texttt{long},
+  \texttt{long\ long}
+\item
+  Floating-point types: \texttt{float}, \texttt{double},
+  \texttt{long\ double}
+\item
+  Character type: \texttt{char}
+\end{enumerate}
+
+Example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{int}\NormalTok{ age = }\DecValTok{30}\NormalTok{;}
+\DataTypeTok{float}\NormalTok{ pi = }\FloatTok{3.14159}\BuiltInTok{f}\NormalTok{;}
+\DataTypeTok{char}\NormalTok{ grade = }\CharTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{control-structures-1}{%
+\subsubsection{Control Structures}\label{control-structures-1}}
+
+C supports standard control structures:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{// If{-}else statement}
+\DataTypeTok{int}\NormalTok{ x = }\DecValTok{10}\NormalTok{;}
+\ControlFlowTok{if}\NormalTok{ (x \textgreater{} }\DecValTok{5}\NormalTok{) \{}
+\NormalTok{    printf(}\StringTok{"x is greater than 5}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{);}
+\NormalTok{\} }\ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{    printf(}\StringTok{"x is not greater than 5}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{);}
+\NormalTok{\}}
+
+\CommentTok{// For loop}
+\ControlFlowTok{for}\NormalTok{ (}\DataTypeTok{int}\NormalTok{ i = }\DecValTok{0}\NormalTok{; i \textless{} }\DecValTok{5}\NormalTok{; i++) \{}
+\NormalTok{    printf(}\StringTok{"\%d "}\NormalTok{, i);}
+\NormalTok{\}}
+
+\CommentTok{// While loop}
+\DataTypeTok{int}\NormalTok{ count = }\DecValTok{0}\NormalTok{;}
+\ControlFlowTok{while}\NormalTok{ (count \textless{} }\DecValTok{5}\NormalTok{) \{}
+\NormalTok{    printf(}\StringTok{"\%d "}\NormalTok{, count);}
+\NormalTok{    count++;}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{functions-1}{%
+\subsubsection{Functions}\label{functions-1}}
+
+Functions in C are defined with a return type, name, and parameters:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{int}\NormalTok{ factorial(}\DataTypeTok{int}\NormalTok{ n) \{}
+    \ControlFlowTok{if}\NormalTok{ (n == }\DecValTok{0}\NormalTok{ || n == }\DecValTok{1}\NormalTok{) \{}
+        \ControlFlowTok{return} \DecValTok{1}\NormalTok{;}
+\NormalTok{    \} }\ControlFlowTok{else}\NormalTok{ \{}
+        \ControlFlowTok{return}\NormalTok{ n * factorial(n {-} }\DecValTok{1}\NormalTok{);}
+\NormalTok{    \}}
+\NormalTok{\}}
+
+\DataTypeTok{int}\NormalTok{ main() \{}
+\NormalTok{    printf(}\StringTok{"Factorial of 5: \%d}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, factorial(}\DecValTok{5}\NormalTok{));}
+    \ControlFlowTok{return} \DecValTok{0}\NormalTok{;}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{memory-management}{%
+\subsubsection{Memory Management}\label{memory-management}}
+
+C provides direct memory management through pointers:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{int}\NormalTok{ x = }\DecValTok{5}\NormalTok{;}
+\DataTypeTok{int}\NormalTok{ *ptr = \&x;  }\CommentTok{// ptr holds the memory address of x}
+\NormalTok{printf(}\StringTok{"Value of x: \%d}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, *ptr);  }\CommentTok{// Dereferencing ptr}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{structures}{%
+\subsubsection{Structures}\label{structures}}
+
+Structures allow grouping of related data:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{struct}\NormalTok{ Person \{}
+    \DataTypeTok{char}\NormalTok{ name[}\DecValTok{50}\NormalTok{];}
+    \DataTypeTok{int}\NormalTok{ age;}
+\NormalTok{\};}
+
+\DataTypeTok{int}\NormalTok{ main() \{}
+    \KeywordTok{struct}\NormalTok{ Person p1 = \{}\StringTok{"Alice"}\NormalTok{, }\DecValTok{30}\NormalTok{\};}
+\NormalTok{    printf(}\StringTok{"Name: \%s, Age: \%d}\SpecialCharTok{\textbackslash{}n}\StringTok{"}\NormalTok{, p1.name, p1.age);}
+    \ControlFlowTok{return} \DecValTok{0}\NormalTok{;}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+C's low-level capabilities make it ideal for system programming,
+embedded systems, and performance-critical applications.
+
+\hypertarget{javascript}{%
+\subsection{JavaScript}\label{javascript}}
+
+JavaScript is a high-level, interpreted programming language primarily
+used for web development. It supports multiple paradigms, including
+object-oriented, imperative, and functional programming.
+
+\hypertarget{syntax-and-basic-structure-2}{%
+\subsubsection{Syntax and Basic
+Structure}\label{syntax-and-basic-structure-2}}
+
+JavaScript can be embedded in HTML or run as a standalone script:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{// This is a comment}
+\KeywordTok{function} \FunctionTok{greet}\NormalTok{(name) \{}
+    \BuiltInTok{console}\OperatorTok{.}\FunctionTok{log}\NormalTok{(}\VerbatimStringTok{\textasciigrave{}Hello, }\SpecialCharTok{$\{}\NormalTok{name}\SpecialCharTok{\}}\VerbatimStringTok{!\textasciigrave{}}\NormalTok{)}\OperatorTok{;}
+\NormalTok{\}}
+
+\FunctionTok{greet}\NormalTok{(}\StringTok{"World"}\NormalTok{)}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{data-types-2}{%
+\subsubsection{Data Types}\label{data-types-2}}
+
+JavaScript has several data types:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Number
+\item
+  String
+\item
+  Boolean
+\item
+  Object
+\item
+  Undefined
+\item
+  Null
+\item
+  Symbol (ES6)
+\end{enumerate}
+
+Example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{let}\NormalTok{ age }\OperatorTok{=} \DecValTok{30}\OperatorTok{;}
+\KeywordTok{let}\NormalTok{ name }\OperatorTok{=} \StringTok{"Alice"}\OperatorTok{;}
+\KeywordTok{let}\NormalTok{ isStudent }\OperatorTok{=} \KeywordTok{false}\OperatorTok{;}
+\KeywordTok{let}\NormalTok{ person }\OperatorTok{=}\NormalTok{ \{}\DataTypeTok{firstName}\OperatorTok{:} \StringTok{"John"}\OperatorTok{,} \DataTypeTok{lastName}\OperatorTok{:} \StringTok{"Doe"}\NormalTok{\}}\OperatorTok{;}
+\KeywordTok{let}\NormalTok{ colors }\OperatorTok{=}\NormalTok{ [}\StringTok{"red"}\OperatorTok{,} \StringTok{"green"}\OperatorTok{,} \StringTok{"blue"}\NormalTok{]}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{control-structures-2}{%
+\subsubsection{Control Structures}\label{control-structures-2}}
+
+JavaScript supports standard control structures:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{// If{-}else statement}
+\KeywordTok{let}\NormalTok{ x }\OperatorTok{=} \DecValTok{10}\OperatorTok{;}
+\ControlFlowTok{if}\NormalTok{ (x }\OperatorTok{\textgreater{}} \DecValTok{5}\NormalTok{) \{}
+    \BuiltInTok{console}\OperatorTok{.}\FunctionTok{log}\NormalTok{(}\StringTok{"x is greater than 5"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{\} }\ControlFlowTok{else}\NormalTok{ \{}
+    \BuiltInTok{console}\OperatorTok{.}\FunctionTok{log}\NormalTok{(}\StringTok{"x is not greater than 5"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{\}}
+
+\CommentTok{// For loop}
+\ControlFlowTok{for}\NormalTok{ (}\KeywordTok{let}\NormalTok{ i }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}\NormalTok{ i }\OperatorTok{\textless{}} \DecValTok{5}\OperatorTok{;}\NormalTok{ i}\OperatorTok{++}\NormalTok{) \{}
+    \BuiltInTok{console}\OperatorTok{.}\FunctionTok{log}\NormalTok{(i)}\OperatorTok{;}
+\NormalTok{\}}
+
+\CommentTok{// While loop}
+\KeywordTok{let}\NormalTok{ count }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}
+\ControlFlowTok{while}\NormalTok{ (count }\OperatorTok{\textless{}} \DecValTok{5}\NormalTok{) \{}
+    \BuiltInTok{console}\OperatorTok{.}\FunctionTok{log}\NormalTok{(count)}\OperatorTok{;}
+\NormalTok{    count}\OperatorTok{++;}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{functions-2}{%
+\subsubsection{Functions}\label{functions-2}}
+
+Functions in JavaScript are first-class citizens:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{function} \FunctionTok{factorial}\NormalTok{(n) \{}
+    \ControlFlowTok{if}\NormalTok{ (n }\OperatorTok{===} \DecValTok{0} \OperatorTok{||}\NormalTok{ n }\OperatorTok{===} \DecValTok{1}\NormalTok{) \{}
+        \ControlFlowTok{return} \DecValTok{1}\OperatorTok{;}
+\NormalTok{    \} }\ControlFlowTok{else}\NormalTok{ \{}
+        \ControlFlowTok{return}\NormalTok{ n }\OperatorTok{*} \FunctionTok{factorial}\NormalTok{(n }\OperatorTok{{-}} \DecValTok{1}\NormalTok{)}\OperatorTok{;}
+\NormalTok{    \}}
+\NormalTok{\}}
+
+\BuiltInTok{console}\OperatorTok{.}\FunctionTok{log}\NormalTok{(}\FunctionTok{factorial}\NormalTok{(}\DecValTok{5}\NormalTok{))}\OperatorTok{;}  \CommentTok{// Output: 120}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{object-oriented-programming-1}{%
+\subsubsection{Object-Oriented
+Programming}\label{object-oriented-programming-1}}
+
+JavaScript uses prototype-based OOP:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Animal \{}
+    \FunctionTok{constructor}\NormalTok{(name) \{}
+        \KeywordTok{this}\OperatorTok{.}\AttributeTok{name} \OperatorTok{=}\NormalTok{ name}\OperatorTok{;}
+\NormalTok{    \}}
+
+    \FunctionTok{speak}\NormalTok{() \{}
+        \BuiltInTok{console}\OperatorTok{.}\FunctionTok{log}\NormalTok{(}\VerbatimStringTok{\textasciigrave{}}\SpecialCharTok{$\{}\KeywordTok{this}\OperatorTok{.}\AttributeTok{name}\SpecialCharTok{\}}\VerbatimStringTok{ makes a sound.\textasciigrave{}}\NormalTok{)}\OperatorTok{;}
+\NormalTok{    \}}
+\NormalTok{\}}
+
+\KeywordTok{class}\NormalTok{ Dog }\KeywordTok{extends}\NormalTok{ Animal \{}
+    \FunctionTok{speak}\NormalTok{() \{}
+        \BuiltInTok{console}\OperatorTok{.}\FunctionTok{log}\NormalTok{(}\VerbatimStringTok{\textasciigrave{}}\SpecialCharTok{$\{}\KeywordTok{this}\OperatorTok{.}\AttributeTok{name}\SpecialCharTok{\}}\VerbatimStringTok{ barks.\textasciigrave{}}\NormalTok{)}\OperatorTok{;}
+\NormalTok{    \}}
+\NormalTok{\}}
+
+\KeywordTok{let}\NormalTok{ dog }\OperatorTok{=} \KeywordTok{new} \FunctionTok{Dog}\NormalTok{(}\StringTok{"Buddy"}\NormalTok{)}\OperatorTok{;}
+\NormalTok{dog}\OperatorTok{.}\FunctionTok{speak}\NormalTok{()}\OperatorTok{;}  \CommentTok{// Output: Buddy barks.}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{asynchronous-programming}{%
+\subsubsection{Asynchronous
+Programming}\label{asynchronous-programming}}
+
+JavaScript supports asynchronous programming through callbacks,
+promises, and async/await:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{function} \FunctionTok{fetchData}\NormalTok{() \{}
+    \ControlFlowTok{return} \KeywordTok{new} \BuiltInTok{Promise}\NormalTok{((resolve}\OperatorTok{,}\NormalTok{ reject) }\KeywordTok{=\textgreater{}}\NormalTok{ \{}
+        \PreprocessorTok{setTimeout}\NormalTok{(() }\KeywordTok{=\textgreater{}} \FunctionTok{resolve}\NormalTok{(}\StringTok{"Data fetched"}\NormalTok{)}\OperatorTok{,} \DecValTok{2000}\NormalTok{)}\OperatorTok{;}
+\NormalTok{    \})}\OperatorTok{;}
+\NormalTok{\}}
+
+\KeywordTok{async} \KeywordTok{function} \FunctionTok{getData}\NormalTok{() \{}
+    \ControlFlowTok{try}\NormalTok{ \{}
+        \KeywordTok{const}\NormalTok{ result }\OperatorTok{=} \ControlFlowTok{await} \FunctionTok{fetchData}\NormalTok{()}\OperatorTok{;}
+        \BuiltInTok{console}\OperatorTok{.}\FunctionTok{log}\NormalTok{(result)}\OperatorTok{;}
+\NormalTok{    \} }\ControlFlowTok{catch}\NormalTok{ (error) \{}
+        \BuiltInTok{console}\OperatorTok{.}\FunctionTok{error}\NormalTok{(error)}\OperatorTok{;}
+\NormalTok{    \}}
+\NormalTok{\}}
+
+\FunctionTok{getData}\NormalTok{()}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+JavaScript's versatility makes it essential for web development, both on
+the client-side and server-side (Node.js).
+
+\hypertarget{java}{%
+\subsection{Java}\label{java}}
+
+Java is a popular, general-purpose programming language designed to be
+platform-independent. It follows the ``write once, run anywhere''
+principle and is strongly object-oriented.
+
+\hypertarget{syntax-and-basic-structure-3}{%
+\subsubsection{Syntax and Basic
+Structure}\label{syntax-and-basic-structure-3}}
+
+Java programs are organized into classes:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{public} \KeywordTok{class}\NormalTok{ HelloWorld \{}
+    \KeywordTok{public} \DataTypeTok{static} \DataTypeTok{void} \FunctionTok{main}\NormalTok{(}\BuiltInTok{String}\NormalTok{[] args) \{}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"Hello, World!"}\NormalTok{);}
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{data-types-3}{%
+\subsubsection{Data Types}\label{data-types-3}}
+
+Java has two categories of data types:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Primitive types: \texttt{byte}, \texttt{short}, \texttt{int},
+  \texttt{long}, \texttt{float}, \texttt{double}, \texttt{boolean},
+  \texttt{char}
+\item
+  Reference types: Classes, Interfaces, Arrays
+\end{enumerate}
+
+Example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{int}\NormalTok{ age = }\DecValTok{30}\NormalTok{;}
+\DataTypeTok{double}\NormalTok{ pi = }\FloatTok{3.}\DecValTok{14159}\NormalTok{;}
+\DataTypeTok{boolean}\NormalTok{ isStudent = }\KeywordTok{false}\NormalTok{;}
+\BuiltInTok{String}\NormalTok{ name = }\StringTok{"Alice"}\NormalTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{control-structures-3}{%
+\subsubsection{Control Structures}\label{control-structures-3}}
+
+Java supports standard control structures:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{// If{-}else statement}
+\DataTypeTok{int}\NormalTok{ x = }\DecValTok{10}\NormalTok{;}
+\KeywordTok{if}\NormalTok{ (x \textgreater{} }\DecValTok{5}\NormalTok{) \{}
+    \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"x is greater than 5"}\NormalTok{);}
+\NormalTok{\} }\KeywordTok{else}\NormalTok{ \{}
+    \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"x is not greater than 5"}\NormalTok{);}
+\NormalTok{\}}
+
+\CommentTok{// For loop}
+\KeywordTok{for}\NormalTok{ (}\DataTypeTok{int}\NormalTok{ i = }\DecValTok{0}\NormalTok{; i \textless{} }\DecValTok{5}\NormalTok{; i++) \{}
+    \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(i);}
+\NormalTok{\}}
+
+\CommentTok{// While loop}
+\DataTypeTok{int}\NormalTok{ count = }\DecValTok{0}\NormalTok{;}
+\KeywordTok{while}\NormalTok{ (count \textless{} }\DecValTok{5}\NormalTok{) \{}
+    \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(count);}
+\NormalTok{    count++;}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{object-oriented-programming-2}{%
+\subsubsection{Object-Oriented
+Programming}\label{object-oriented-programming-2}}
+
+Java is built around OOP principles:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{ Animal \{}
+    \KeywordTok{private} \BuiltInTok{String}\NormalTok{ name;}
+
+    \KeywordTok{public} \FunctionTok{Animal}\NormalTok{(}\BuiltInTok{String}\NormalTok{ name) \{}
+        \KeywordTok{this}\NormalTok{.}\FunctionTok{name}\NormalTok{ = name;}
+\NormalTok{    \}}
+
+    \KeywordTok{public} \DataTypeTok{void} \FunctionTok{speak}\NormalTok{() \{}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(name + }\StringTok{" makes a sound."}\NormalTok{);}
+\NormalTok{    \}}
+\NormalTok{\}}
+
+\KeywordTok{class}\NormalTok{ Dog }\KeywordTok{extends}\NormalTok{ Animal \{}
+    \KeywordTok{public} \FunctionTok{Dog}\NormalTok{(}\BuiltInTok{String}\NormalTok{ name) \{}
+        \KeywordTok{super}\NormalTok{(name);}
+\NormalTok{    \}}
+
+    \AttributeTok{@Override}
+    \KeywordTok{public} \DataTypeTok{void} \FunctionTok{speak}\NormalTok{() \{}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(name + }\StringTok{" barks."}\NormalTok{);}
+\NormalTok{    \}}
+\NormalTok{\}}
+
+\KeywordTok{public} \KeywordTok{class}\NormalTok{ Main \{}
+    \KeywordTok{public} \DataTypeTok{static} \DataTypeTok{void} \FunctionTok{main}\NormalTok{(}\BuiltInTok{String}\NormalTok{[] args) \{}
+\NormalTok{        Animal dog = }\KeywordTok{new} \FunctionTok{Dog}\NormalTok{(}\StringTok{"Buddy"}\NormalTok{);}
+\NormalTok{        dog.}\FunctionTok{speak}\NormalTok{();  }\CommentTok{// Output: Buddy barks.}
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{exception-handling}{%
+\subsubsection{Exception Handling}\label{exception-handling}}
+
+Java provides robust exception handling:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{try}\NormalTok{ \{}
+    \DataTypeTok{int}\NormalTok{ result = }\DecValTok{10}\NormalTok{ / }\DecValTok{0}\NormalTok{;}
+\NormalTok{\} }\KeywordTok{catch}\NormalTok{ (}\BuiltInTok{ArithmeticException}\NormalTok{ e) \{}
+    \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"Cannot divide by zero!"}\NormalTok{);}
+\NormalTok{\} }\KeywordTok{finally}\NormalTok{ \{}
+    \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"This always executes."}\NormalTok{);}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{interfaces-and-polymorphism}{%
+\subsubsection{Interfaces and
+Polymorphism}\label{interfaces-and-polymorphism}}
+
+Java uses interfaces to achieve multiple inheritance and polymorphism:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{interface}\NormalTok{ Flyable \{}
+    \DataTypeTok{void} \FunctionTok{fly}\NormalTok{();}
+\NormalTok{\}}
+
+\KeywordTok{class}\NormalTok{ Bird }\KeywordTok{implements}\NormalTok{ Flyable \{}
+    \KeywordTok{public} \DataTypeTok{void} \FunctionTok{fly}\NormalTok{() \{}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"Bird is flying."}\NormalTok{);}
+\NormalTok{    \}}
+\NormalTok{\}}
+
+\KeywordTok{class}\NormalTok{ Airplane }\KeywordTok{implements}\NormalTok{ Flyable \{}
+    \KeywordTok{public} \DataTypeTok{void} \FunctionTok{fly}\NormalTok{() \{}
+        \BuiltInTok{System}\NormalTok{.}\FunctionTok{out}\NormalTok{.}\FunctionTok{println}\NormalTok{(}\StringTok{"Airplane is flying."}\NormalTok{);}
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Java's robustness, security features, and extensive ecosystem make it
+popular for enterprise applications, Android development, and
+large-scale systems.
+
+\hypertarget{comparative-analysis}{%
+\subsection{Comparative Analysis}\label{comparative-analysis}}
+
+Each of these languages has its strengths and ideal use cases:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Python: Excellent for rapid development, data analysis, AI, and
+  scripting.
+\item
+  C: Perfect for system programming, embedded systems, and
+  performance-critical applications.
+\item
+  JavaScript: Essential for web development, both front-end and back-end
+  (Node.js).
+\item
+  Java: Ideal for enterprise applications, Android development, and
+  large-scale systems.
+\end{enumerate}
+
+When choosing a language, consider factors such as the project
+requirements, performance needs, development speed, and the existing
+ecosystem of libraries and frameworks.
+
+By understanding these languages, you'll have a solid foundation for
+tackling a wide range of programming challenges and be well-prepared for
+the more advanced topics in subsequent chapters.
+
+\end{document}
