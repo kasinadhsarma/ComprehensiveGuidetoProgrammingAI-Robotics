@@ -1,4 +1,3 @@
-markdown
 # Algorithms and Development: Foundations of Efficient Problem-Solving
 
 ## Introduction
