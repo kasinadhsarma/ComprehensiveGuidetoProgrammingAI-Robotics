@@ -9,9 +9,7 @@ Sorting is a fundamental operation in computer science, with numerous applicatio
 ### Bubble Sort
 Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order.
 
-```markdown
 #### Algorithm: Bubble Sort
-```
 ```plaintext
 PROCEDURE BubbleSort(A)
     n ← length(A)
@@ -24,9 +22,7 @@ PROCEDURE BubbleSort(A)
 ### Quick Sort
 Quick Sort is an efficient, divide-and-conquer sorting algorithm that works by selecting a 'pivot' element and partitioning the array around the pivot. The key to Quick Sort's efficiency is the partition function.
 
-```markdown
 #### Algorithm: Quick Sort
-```
 ```plaintext
 PROCEDURE QuickSort(A, low, high)
     IF low < high
@@ -37,9 +33,7 @@ PROCEDURE QuickSort(A, low, high)
 
 The Partition function selects a pivot (often the last element) and places it in its correct position in the sorted array. It also arranges other elements around the pivot, with smaller elements to the left and larger elements to the right.
 
-```markdown
 #### Algorithm: Partition
-```
 ```plaintext
 PROCEDURE Partition(A, low, high)
     pivot ← A[high]
@@ -60,9 +54,7 @@ Efficient searching is crucial for retrieving information from large datasets.
 ### Binary Search
 Binary Search is an efficient algorithm for searching a sorted array by repeatedly dividing the search interval in half.
 
-```markdown
 #### Algorithm: Binary Search
-```
 ```plaintext
 PROCEDURE BinarySearch(A, target)
     low ← 0
@@ -87,9 +79,7 @@ An adjacency list representation of a graph G = (V, E) is an array Adj of |V| li
 ### Depth-First Search (DFS)
 DFS is an algorithm for traversing or searching tree or graph data structures, starting from a selected node and exploring as far as possible along each branch before backtracking.
 
-```markdown
 #### Algorithm: Depth-First Search
-```
 ```plaintext
 PROCEDURE DFS(G, v)
     mark v as visited
@@ -132,9 +122,7 @@ String matching algorithms are used to find occurrences of a pattern string with
 ### Knuth-Morris-Pratt (KMP) Algorithm
 The KMP algorithm is an efficient string matching algorithm that uses the observation that when a mismatch occurs, the pattern itself embodies sufficient information to determine where the next match could begin.
 
-```markdown
 #### Algorithm: KMP Algorithm
-```
 ```plaintext
 PROCEDURE KMP(text, pattern)
     n ← length(text)
@@ -161,7 +149,6 @@ Optimization algorithms are used to find the best solution from all feasible sol
 ### Gradient Descent
 Gradient Descent is an iterative optimization algorithm used to minimize a function by iteratively moving in the direction of steepest descent.
 
-```markdown
 #### Algorithm: Gradient Descent
 ```
 ```plaintext
@@ -181,7 +168,6 @@ The Divide and Conquer pattern involves breaking a problem into smaller subprobl
 #### Example: Merge Sort
 Merge Sort is a classic example of the Divide and Conquer pattern:
 
-```markdown
 #### Algorithm: Merge Sort
 ```
 ```plaintext
@@ -200,7 +186,6 @@ Dynamic Programming is an algorithmic paradigm that solves complex problems by b
 #### Example: Fibonacci Sequence
 The Fibonacci sequence calculation using Dynamic Programming:
 
-```markdown
 #### Algorithm: Fibonacci Sequence
 ```
 ```plaintext
@@ -218,7 +203,6 @@ Greedy algorithms make locally optimal choices at each step with the hope of fin
 #### Example: Coin Change Problem
 A simple greedy algorithm for the coin change problem:
 
-```markdown
 #### Algorithm: Coin Change
 ```
 ```plaintext
